@@ -1,0 +1,1639 @@
+{
+	"info": {
+		"_postman_id": "1ba33665-5202-4bf9-b3c2-e354c4e2ebf5",
+		"name": "Restaurant Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32919442"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"mohamed hossam\" ,\r\n    \"email\" : \"mohamed.hossam.elbably@gmail.com\" ,\r\n    \"password\" : \"12345\" ,\r\n    \"cPassword\" : \"12345\" ,\r\n    \"address\" : \"Mansoura-Egypt\" ,\r\n    \"phone\" : \"01067705001\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/signUp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logIn",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userData\":\"mohamedelbably521@gmail.com\",\r\n     \"password\": \"12345\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/logIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"logIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_account",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjFlYTVmODNjZTMwYjlhNTRkYjg4NCIsImVtYWlsIjoibW9oYW1lZC5ob3NzYW0uZWxiYWJseUBnbWFpbC5jb20iLCJpYXQiOjE3MTc2OTMwNTEsImV4cCI6MTcxNzkwOTA1MX0.gx6eP4viPdlBQGTYXul83LBbQFEDyahv8-DsDrP4070"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\" : \"Mansoura-Egypt\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/update_account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"update_account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_account",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjFlYTVmODNjZTMwYjlhNTRkYjg4NCIsImVtYWlsIjoibW9oYW1lZC5ob3NzYW0uZWxiYWJseUBnbWFpbC5jb20iLCJpYXQiOjE3MTc2OTMwNTEsImV4cCI6MTcxNzkwOTA1MX0.gx6eP4viPdlBQGTYXul83LBbQFEDyahv8-DsDrP4070"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/auth/delete_account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"delete_account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjFlZDMwMTliYzQwMjViYzgyYWZiOCIsImVtYWlsIjoibW9oYW1lZGVsYmFibHk1MjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NjkzODE3LCJleHAiOjE3MTc5MDk4MTd9.FT7HkUFQRd8ZDy9u_t5uFQEalEY9IVXdmR0JEgv_CPY"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/auth/6661ecc619bc4025bc82afb2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"6661ecc619bc4025bc82afb2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjFlY2M2MTliYzQwMjViYzgyYWZiMiIsImVtYWlsIjoibW9oYW1lZC5ob3NzYW0uZWxiYWJseUBnbWFpbC5jb20iLCJpYXQiOjE3MTc2OTQxMjksImV4cCI6MTcxNzkxMDEyOX0.YNOCTYawlt841wv2O70KA8ZW87bRIe1DIaSknegjR2I"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\" : \"55555\",\r\n    \"password\" : \"12345\",\r\n    \"cPassword\" : \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/updatePassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generateOTP",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"mohamed.hossam.elbably@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/OTP",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"OTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"mohamed.hossam.elbably@gmail.com\",\r\n     \"OTP\" : \"81871\", \r\n     \"password\" : \"55555\", \r\n     \"cPassword\" : \"55555\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/resetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "createCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjFlZDMwMTliYzQwMjViYzgyYWZiOCIsImVtYWlsIjoibW9oYW1lZGVsYmFibHk1MjFAZ21haWwuY29tIiwiaWF0IjoxNzE3Njk3NjI1LCJleHAiOjE3MTc5MTM2MjV9.v__KufPxCmQ9URophL-322fMMEPmt8CTc53d8fych7U"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category",
+									"type": "file",
+									"src": "/C:/Users/Bablu/Downloads/category/bakes.jpg"
+								},
+								{
+									"key": "title",
+									"value": "bakes",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjFlZDMwMTliYzQwMjViYzgyYWZiOCIsImVtYWlsIjoibW9oYW1lZGVsYmFibHk1MjFAZ21haWwuY29tIiwiaWF0IjoxNzE3Njk3NjI1LCJleHAiOjE3MTc5MTM2MjV9.v__KufPxCmQ9URophL-322fMMEPmt8CTc53d8fych7U"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category",
+									"type": "file",
+									"src": "/C:/Users/Bablu/Downloads/category/dessert1.jpg"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/category/66620be569020365f5b793c7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"category",
+								"66620be569020365f5b793c7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjFlZDMwMTliYzQwMjViYzgyYWZiOCIsImVtYWlsIjoibW9oYW1lZGVsYmFibHk1MjFAZ21haWwuY29tIiwiaWF0IjoxNzE3Njk3NjI1LCJleHAiOjE3MTc5MTM2MjV9.v__KufPxCmQ9URophL-322fMMEPmt8CTc53d8fych7U"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category",
+									"type": "file",
+									"src": "/C:/Users/Bablu/Downloads/category/dessert1.jpg"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/category/66620c0d69020365f5b793cf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"category",
+								"66620c0d69020365f5b793cf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "restaurant",
+			"item": [
+				{
+					"name": "createRestaurant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc3MDY0NDYsImV4cCI6MTcxNzkyMjQ0Nn0.SJn6o6rz5THtOh9WJxPm-30R5DqW3NA7LQFgBPGCB3I"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "restaurant",
+									"type": "file",
+									"src": "/C:/Users/Bablu/Downloads/logo restaurants/elmohamady.jpg"
+								},
+								{
+									"key": "title",
+									"value": "El Mohamady",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "19244",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "well made oriental kofta & kbab",
+									"type": "text"
+								},
+								{
+									"key": "categoryId[0]",
+									"value": "66620c3969020365f5b793d7",
+									"type": "text"
+								},
+								{
+									"key": "categoryId[1]",
+									"value": "66620bf969020365f5b793cb",
+									"type": "text"
+								},
+								{
+									"key": "workingTime",
+									"value": "12pm - 2am",
+									"type": "text"
+								},
+								{
+									"key": "delievery",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "mansoura",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/restaurant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateReastaurant",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc3MDY0NDYsImV4cCI6MTcxNzkyMjQ0Nn0.SJn6o6rz5THtOh9WJxPm-30R5DqW3NA7LQFgBPGCB3I"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "restaurant",
+									"type": "file",
+									"src": "/C:/Users/Bablu/Downloads/logo restaurants/abu adel.png",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "Abu Adel Sweets",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "19444",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "well made oriental sweets and desserts",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "workingTime",
+									"value": "24/7",
+									"type": "text"
+								},
+								{
+									"key": "delievery",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "mansoura - dikirnis - Elkebab",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/restaurant/666225114557526ca42d9baa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant",
+								"666225114557526ca42d9baa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReastaurant",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc3MDY0NDYsImV4cCI6MTcxNzkyMjQ0Nn0.SJn6o6rz5THtOh9WJxPm-30R5DqW3NA7LQFgBPGCB3I"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/restaurant/66622f81969ae5864e930856",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant",
+								"66622f81969ae5864e930856"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllRestaurants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/restaurant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchRestaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/restaurant/search?keyword=r",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "r"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "food",
+			"item": [
+				{
+					"name": "createFood",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc3NzMxOTIsImV4cCI6MTcxNzk4OTE5Mn0.rCHTvYQhU-ujfGp9oGJqT-esh1eNJ9cQ0GnTBJjstOA"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "food",
+									"type": "file",
+									"src": "/C:/Users/Bablu/Downloads/food/sea food soup.jpg"
+								},
+								{
+									"key": "title",
+									"value": "sea food soup",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "66620c2a69020365f5b793d3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "mix of sea fruits in creamy soup",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "120",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/restaurant/666226fcfe58bff53fb8f01b/food",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant",
+								"666226fcfe58bff53fb8f01b",
+								"food"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateFood",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc3NzMxOTIsImV4cCI6MTcxNzk4OTE5Mn0.rCHTvYQhU-ujfGp9oGJqT-esh1eNJ9cQ0GnTBJjstOA"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "food",
+									"type": "file",
+									"src": "/C:/Users/Bablu/Downloads/food/Seafood-Chowder-square.jpg"
+								},
+								{
+									"key": "title",
+									"value": "sea food soup",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "mix of sea fruits in creamy soup",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "400",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/restaurant/666226fcfe58bff53fb8f01b/food/6663271d835fb08fdfe81b60",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant",
+								"666226fcfe58bff53fb8f01b",
+								"food",
+								"6663271d835fb08fdfe81b60"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFood",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc3NzMxOTIsImV4cCI6MTcxNzk4OTE5Mn0.rCHTvYQhU-ujfGp9oGJqT-esh1eNJ9cQ0GnTBJjstOA"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/restaurant/666226fcfe58bff53fb8f01b/food/6663271d835fb08fdfe81b60",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant",
+								"666226fcfe58bff53fb8f01b",
+								"food",
+								"6663271d835fb08fdfe81b60"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllFoods",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc3NzMxOTIsImV4cCI6MTcxNzk4OTE5Mn0.rCHTvYQhU-ujfGp9oGJqT-esh1eNJ9cQ0GnTBJjstOA"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "food",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "sea food soup",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/food",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"food"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRestaurantFoods",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc3NzMxOTIsImV4cCI6MTcxNzk4OTE5Mn0.rCHTvYQhU-ujfGp9oGJqT-esh1eNJ9cQ0GnTBJjstOA"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "sea food soup",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/restaurant/666226fcfe58bff53fb8f01b/food",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant",
+								"666226fcfe58bff53fb8f01b",
+								"food"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchFoods",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc3NzMxOTIsImV4cCI6MTcxNzk4OTE5Mn0.rCHTvYQhU-ujfGp9oGJqT-esh1eNJ9cQ0GnTBJjstOA"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "food",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "sea food soup",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/food/search?price[$gt]=100&sort=-price&keyword=a&page=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"food",
+								"search"
+							],
+							"query": [
+								{
+									"key": "price[$gt]",
+									"value": "100"
+								},
+								{
+									"key": "sort",
+									"value": "-price"
+								},
+								{
+									"key": "keyword",
+									"value": "a"
+								},
+								{
+									"key": "page",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchRestaurantFoods",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc3NzMxOTIsImV4cCI6MTcxNzk4OTE5Mn0.rCHTvYQhU-ujfGp9oGJqT-esh1eNJ9cQ0GnTBJjstOA"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "food",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "sea food soup",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/restaurant/66631c2dd0cf836d14e658dc/food/search?price[$gt]=100&sort=price&keyword=a&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"restaurant",
+								"66631c2dd0cf836d14e658dc",
+								"food",
+								"search"
+							],
+							"query": [
+								{
+									"key": "price[$gt]",
+									"value": "100"
+								},
+								{
+									"key": "sort",
+									"value": "price"
+								},
+								{
+									"key": "keyword",
+									"value": "a"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "addToCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjMzYjcwZWU4MDJiYjhmODllODM0ZiIsImVtYWlsIjoibW9oYW1lZC5ob3NzYW0uZWxiYWJseUBnbWFpbC5jb20iLCJpYXQiOjE3MTc4NjE1MDAsImV4cCI6MTcxODA3NzUwMH0.5GcRkBGAOvliMFNfFKAr8eW0eB6ko-xZ2hECsuMs7E0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"foodId\" : \"666324bd22071754bf2b58d0\" ,\r\n    \"quantity\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCart",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjMzYjcwZWU4MDJiYjhmODllODM0ZiIsImVtYWlsIjoibW9oYW1lZC5ob3NzYW0uZWxiYWJseUBnbWFpbC5jb20iLCJpYXQiOjE3MTc3ODM0ODUsImV4cCI6MTcxNzk5OTQ4NX0.TD9txtoawprkzTjZhUcZEjnBU9IsR8v2AYcz86Fr788"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"foodId\" : \"666326de835fb08fdfe81b5b\" ,\r\n    \"quantity\" : 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCartByUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjMzYjcwZWU4MDJiYjhmODllODM0ZiIsImVtYWlsIjoibW9oYW1lZC5ob3NzYW0uZWxiYWJseUBnbWFpbC5jb20iLCJpYXQiOjE3MTc3ODM0ODUsImV4cCI6MTcxNzk5OTQ4NX0.TD9txtoawprkzTjZhUcZEjnBU9IsR8v2AYcz86Fr788"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCartByAdmin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjFlZDMwMTliYzQwMjViYzgyYWZiOCIsImVtYWlsIjoibW9oYW1lZGVsYmFibHk1MjFAZ21haWwuY29tIiwiaWF0IjoxNzE3Nzg2MjA4LCJleHAiOjE3MTgwMDIyMDh9.W0d8BAmUCIRr3yxbmeYTlxMsSmAaeitz4cL3pnD1oTg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cartId\" : \"66633b8bee802bb8f89e8353\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeFromCart",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjMzYjcwZWU4MDJiYjhmODllODM0ZiIsImVtYWlsIjoibW9oYW1lZC5ob3NzYW0uZWxiYWJseUBnbWFpbC5jb20iLCJpYXQiOjE3MTc3ODY4MTQsImV4cCI6MTcxODAwMjgxNH0.Mx7_rdZFquwKxGhZmO1qe7BY1-OygbNMm0pvPJTnyzo"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"foodId\" : \"6663264222071754bf2b58df\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clearCart",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjMzYjcwZWU4MDJiYjhmODllODM0ZiIsImVtYWlsIjoibW9oYW1lZC5ob3NzYW0uZWxiYWJseUBnbWFpbC5jb20iLCJpYXQiOjE3MTc3ODM0ODUsImV4cCI6MTcxNzk5OTQ4NX0.TD9txtoawprkzTjZhUcZEjnBU9IsR8v2AYcz86Fr788"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/cart/clear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"cart",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "coupon",
+			"item": [
+				{
+					"name": "createCoupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc4NDYwNDYsImV4cCI6MTcxODA2MjA0Nn0.EEgVmRJn4itjGP4w9Wl3FnwE9XwhIqjdE9EIU-JflxU"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"discount\" : 15 ,\r\n    \"expiredAt\" : \"6/22/2025\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/coupon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"coupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCoupon",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc4NDYwNDYsImV4cCI6MTcxODA2MjA0Nn0.EEgVmRJn4itjGP4w9Wl3FnwE9XwhIqjdE9EIU-JflxU"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"expiredAt\" : \"8/22/2025\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/coupon/666441a6f0bd95b354684bb9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"coupon",
+								"666441a6f0bd95b354684bb9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCoupon",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc4NDYwNDYsImV4cCI6MTcxODA2MjA0Nn0.EEgVmRJn4itjGP4w9Wl3FnwE9XwhIqjdE9EIU-JflxU"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/coupon/666441a6f0bd95b354684bb9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"coupon",
+								"666441a6f0bd95b354684bb9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCoupons - Admin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjFlZDMwMTliYzQwMjViYzgyYWZiOCIsImVtYWlsIjoibW9oYW1lZGVsYmFibHk1MjFAZ21haWwuY29tIiwiaWF0IjoxNzE3ODQ4NDg1LCJleHAiOjE3MTgwNjQ0ODV9.xqenME8MRlHZKWS5dUERlC_zMPEoIJ_EnLIFP_9aKpU"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/coupon/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"coupon",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCoupons - rest-owner",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjIxZDdiNTNlN2Y5ODI3NjUyMTdiMSIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbEBnbWFpbC5jb20iLCJpYXQiOjE3MTc4NDYwNDYsImV4cCI6MTcxODA2MjA0Nn0.EEgVmRJn4itjGP4w9Wl3FnwE9XwhIqjdE9EIU-JflxU"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/coupon/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"coupon",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "createOrder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjMzYjcwZWU4MDJiYjhmODllODM0ZiIsImVtYWlsIjoibW9oYW1lZC5ob3NzYW0uZWxiYWJseUBnbWFpbC5jb20iLCJpYXQiOjE3MTc4NjE1MDAsImV4cCI6MTcxODA3NzUwMH0.5GcRkBGAOvliMFNfFKAr8eW0eB6ko-xZ2hECsuMs7E0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\" : \"01000806990\",\r\n    \"payment\" : \"cash\",\r\n    \"coupon\" : \"44445\",\r\n    \"address\" : \"Mansoura Egypt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/order/cash",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"cash"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelOrder",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjMzYjcwZWU4MDJiYjhmODllODM0ZiIsImVtYWlsIjoibW9oYW1lZC5ob3NzYW0uZWxiYWJseUBnbWFpbC5jb20iLCJpYXQiOjE3MTc4NjE1MDAsImV4cCI6MTcxODA3NzUwMH0.5GcRkBGAOvliMFNfFKAr8eW0eB6ko-xZ2hECsuMs7E0"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/order/666489a7334d352ac15913ea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"666489a7334d352ac15913ea"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
