@@ -1,4 +1,4 @@
-import couponModel from "../../../DB/models/coupon.model.js";
+import couponModel from "../../../DB/models/Coupon.model.js";
 import { asyncHandler } from "../../utils/errorHandling.js";
 import randomstring from 'randomstring';
 

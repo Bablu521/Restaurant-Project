@@ -1,4 +1,4 @@
-import userModel from "../../../DB/models/user.model.js";
+import userModel from "../../../DB/models/User.model.js";
 import { asyncHandler } from "../../utils/errorHandling.js";
 import jwt from "jsonwebtoken"
 import sendEmail from './../../utils/email.js';
