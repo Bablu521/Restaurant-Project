@@ -14,7 +14,7 @@ router.post("/cash", isAuthenticated, isAuthorized("client"), validation(orderSc
 router.post("/visa", isAuthenticated, isAuthorized("client"), validation(orderSchema.createVisaOrder), orderController.createVisaOrder)
 
 //orderWebhook
-router.post("/orderWebhook", express.raw({ type: 'application/json' }), orderController.orderWebhook)
+router.post("/webhook", express.raw({ type: 'application/json' }), orderController.orderWebhook)
 
 //cancelOrder
 router.patch("/:id", isAuthenticated, isAuthorized("client"), validation(orderSchema.cancelOrder), orderController.cancelOrder)
