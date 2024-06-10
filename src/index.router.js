@@ -13,7 +13,13 @@ import couponRouter from "./modules/Coupon/coupon.router.js"
 const initApp = (app, express) => {
     connectDB()
     app.use(cors())
-    app.use(express.json())
+
+    app.use((req, res, next) => {
+        if (req.originalUrl == "/order/webhook") {
+            return next()
+        }
+        express.json()(req, res, next)
+    })
 
     app.get("/", (req, res, next) => {
         return res.status(200).json({ message: "Welcome to Restaurant Project" })

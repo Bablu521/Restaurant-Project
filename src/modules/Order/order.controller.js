@@ -188,6 +188,28 @@ export const createVisaOrder = asyncHandler(async (req, res, next) => {
     return res.status(201).json({ message: "Done", order, results: { url: session.url } })
 })
 
+//orderWebhook
+export const orderWebhook = asyncHandler(async (req, res, next) => {
+    const stripe = new Stripe(process.env.STRIPE_KEY);
+    const sig = req.headers['stripe-signature'];
+    let event;
+    try {
+        event = stripe.webhooks.constructEvent(req.body, sig, process.env.ENDPOINTSECRET);
+    } catch (err) {
+        res.status(400).send(`Webhook Error: ${err.message}`);
+        return;
+    }
+
+    // Handle the event
+    const orderId = event.data.object.metadata.order_id
+    if (event.type == 'checkout.session.completed') {
+        await orderModel.findOneAndUpdate({ _id: orderId }, { status: "visaPaid" })
+    } else {
+        await orderModel.findOneAndUpdate({ _id: orderId }, { status: "failedToPay" })
+    }
+    return res.status(200).json({ message: "Done" })
+});
+
 //cancelOrder
 export const cancelOrder = asyncHandler(async (req, res, next) => {
     const order = await orderModel.findOne({ _id: req.params.id, userId: req.user._id })

@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "1ba33665-5202-4bf9-b3c2-e354c4e2ebf5",
+		"_postman_id": "7594b0c7-fdc5-4147-bddc-0fddef502e11",
 		"name": "Restaurant Project",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "32919442"
+		"_exporter_id": "32953184"
 	},
 	"item": [
 		{
@@ -1575,7 +1575,7 @@
 			"name": "order",
 			"item": [
 				{
-					"name": "createOrder",
+					"name": "createCashOrder",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1586,7 +1586,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"phone\" : \"01000806990\",\r\n    \"payment\" : \"cash\",\r\n    \"coupon\" : \"44445\",\r\n    \"address\" : \"Mansoura Egypt\"\r\n}",
+							"raw": "{\r\n    \"phone\" : \"01000806990\",\r\n    \"payment\" : \"cash\",\r\n    \"coupon\" : \"591ew\",\r\n    \"address\" : \"Mansoura Egypt\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1603,6 +1603,40 @@
 							"path": [
 								"order",
 								"cash"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createVisaOrder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjMzYjcwZWU4MDJiYjhmODllODM0ZiIsImVtYWlsIjoibW9oYW1lZC5ob3NzYW0uZWxiYWJseUBnbWFpbC5jb20iLCJpYXQiOjE3MTc4NjE1MDAsImV4cCI6MTcxODA3NzUwMH0.5GcRkBGAOvliMFNfFKAr8eW0eB6ko-xZ2hECsuMs7E0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\" : \"01067705001\",\r\n    \"payment\" : \"visa\",\r\n    \"coupon\" : \"591ew\",\r\n    \"address\" : \"Mansoura - Egypt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/order/visa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"order",
+								"visa"
 							]
 						}
 					},
@@ -1628,6 +1662,156 @@
 							"path": [
 								"order",
 								"666489a7334d352ac15913ea"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review",
+			"item": [
+				{
+					"name": "addReview",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjYxMjhiNjI2MDJhOWNkYWI5OThhMCIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbDNAZ21haWwuY29tIiwiaWF0IjoxNzE3OTY1Njg5LCJleHAiOjE3MTgxODE2ODl9.EMHwfA4XII7tO_nmkxg7jy-IxPkBdTXSC8mana4VxDE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"foodRating\" : 2 , \r\n    \"restaurantRating\" : 2 ,\r\n     \"comment\" : \"tasty and delicious food\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/food/666324bd22071754bf2b58d0/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"food",
+								"666324bd22071754bf2b58d0",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateReview",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjYxMjhiNjI2MDJhOWNkYWI5OThhMCIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbDNAZ21haWwuY29tIiwiaWF0IjoxNzE3OTY1Njg5LCJleHAiOjE3MTgxODE2ODl9.EMHwfA4XII7tO_nmkxg7jy-IxPkBdTXSC8mana4VxDE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"restaurantRating\" : 4 , \r\n     \"comment\" : \"new tasty and delicious food\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/food/666324bd22071754bf2b58d0/review/6666150362602a9cdab998bc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"food",
+								"666324bd22071754bf2b58d0",
+								"review",
+								"6666150362602a9cdab998bc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReview",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjYxMjhiNjI2MDJhOWNkYWI5OThhMCIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbDNAZ21haWwuY29tIiwiaWF0IjoxNzE3OTY1Njg5LCJleHAiOjE3MTgxODE2ODl9.EMHwfA4XII7tO_nmkxg7jy-IxPkBdTXSC8mana4VxDE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/food/666324bd22071754bf2b58d0/review/66661c34a42dadad21bb2166",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"food",
+								"666324bd22071754bf2b58d0",
+								"review",
+								"66661c34a42dadad21bb2166"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReviews",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjYxMjhiNjI2MDJhOWNkYWI5OThhMCIsImVtYWlsIjoiZGVudGlzdGFobWFkYWRlbDNAZ21haWwuY29tIiwiaWF0IjoxNzE3OTY1Njg5LCJleHAiOjE3MTgxODE2ODl9.EMHwfA4XII7tO_nmkxg7jy-IxPkBdTXSC8mana4VxDE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/food/666324bd22071754bf2b58d0/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"food",
+								"666324bd22071754bf2b58d0",
+								"review"
 							]
 						}
 					},
